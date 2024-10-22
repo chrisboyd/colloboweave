@@ -3,66 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CollaboWeave AI Assistant</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Collabowave</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<!-- Navigation Bar -->
+<nav>
+    <div>
+        <a href="#"><img src="images/collabowave_logo.png" alt="Collabowave Logo"></a>
+    </div>
+    <ul>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <div>
+        <button>Sign In</button>
+        <button>Register</button>
+    </div>
+</nav>
+
+<!-- Header Section -->
 <header>
-    <nav>
-        <ul>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Resources</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div>
-            <button onclick="location.href='#'">Sign in</button>
-            <button onclick="location.href='#'">Register</button>
-        </div>
-    </nav>
     <h1>Collabowave</h1>
     <p>Most of What You Hear is Gone by Tomorrow</p>
     <p>Don't Let Critical Information Slip Away</p>
 </header>
 
-<section class="subscription-toggle">
-    <button id="monthly-toggle" onclick="togglePlan('monthly')">Monthly</button>
-    <button id="yearly-toggle" onclick="togglePlan('yearly')">Yearly</button>
-</section>
+<!-- Subscription Toggle Buttons -->
+<div class="subscription-toggle">
+    <button id="monthly-button">Monthly</button>
+    <button id="yearly-button">Yearly</button>
+</div>
 
-<section class="subscription-plans">
-    <!-- Immediate Value Plan -->
-    <div class="plan immediate-value">
+<!-- Subscription Plans -->
+<div class="subscription-plans">
+    <div class="plan">
         <h3>Immediate Value</h3>
-        <p class="price">$8/mo (billed annually)</p>
+        <p class="price">$8/mo</p>
         <ul>
-            <li>Business card transcription</li>
-            <li>Transcripts and AI summaries</li>
+            <li>Business Card Transcription</li>
+            <li>Transcripts and AI Summaries</li>
             <li>5-minute audio recording</li>
             <li>50 uses a month</li>
             <li>CSV file for download</li>
         </ul>
-        <button onclick="window.location.href='https://yourwebsite.com/subscribe?subscription=immediate'">Buy Now</button>
+        <button onclick="window.location.href='https://example.com/subscribe?subscription=immediate'">Buy Now</button>
     </div>
 
-    <!-- Basic Plan -->
-    <div class="plan basic">
+    <div class="plan">
         <h3>Basic Plan</h3>
         <p class="price">$25/mo</p>
         <ul>
-            <li>All 'Immediate Value'</li>
+            <li>All "Immediate Value"</li>
             <li>API Access</li>
-            <li>Basic Metrics Capture</li>
+            <li>Basic Metrics capture</li>
             <li>10-minute audio recording</li>
         </ul>
         <button onclick="openBookingForm('basic')">Book a Call</button>
     </div>
 
-    <!-- Enterprise Plan -->
-    <div class="plan enterprise">
+    <div class="plan">
         <h3>Enterprise</h3>
-        <p class="price">Custom Pricing</p>
+        <p class="price">Contact Us</p>
         <ul>
-            <li>All 'Basic Plan'</li>
+            <li>All "Basic Plan"</li>
             <li>Customized Metric Gathering</li>
             <li>Automated Follow-up</li>
             <li>Monthly & Quarterly Analytics</li>
@@ -70,56 +76,58 @@
         </ul>
         <button onclick="openBookingForm('enterprise')">Book a Call</button>
     </div>
-</section>
+</div>
 
-<!-- Information sections -->
-<section class="information">
+<!-- Information Section -->
+<div class="information">
     <div class="info-box">
         <h4>Seamless CRM Integration</h4>
-        <p>No more manual data entry. CollaboWeave connects effortlessly with your CRM, automatically uploading essential information.</p>
+        <p>No more manual data entry. Collabowave connects effortlessly with your CRM, automatically uploading essential information.</p>
     </div>
+
     <div class="info-box">
         <h4>Instantly Record Key Moments</h4>
-        <p>Never miss a detail again. CollaboWeave allows you to capture and store up to 10 minutes of any conversation on demand.</p>
+        <p>Never miss a detail again. Collabowave allows you to capture and store 10 minutes of any conversation on-demand.</p>
     </div>
+
     <div class="info-box">
-        <h4>AI-Generated Summaries</h4>
-        <p>Let AI handle the busywork. CollaboWeave transcribes and summarizes your conversations instantly.</p>
+        <h4>AI-Generated Summaries – No Manual Notes Needed</h4>
+        <p>Let AI handle the busywork. Collabowave transcribes and summarizes your conversations instantly.</p>
     </div>
-</section>
+</div>
 
 <!-- Booking Form (hidden by default) -->
 <div id="booking-form" style="display:none;">
-    <h3>Book a Meeting</h3>
-    <form id="booking-form-element">
-        <label for="first-name">First Name:</label><br>
-        <input type="text" id="first-name" name="first-name"><br><br>
+    <div id="booking-form-content">
+        <button class="close-btn" onclick="closeBookingForm()">×</button>
+        <h3>Book a Meeting</h3>
+        <form id="booking-form-element">
+            <label for="first-name">First Name:</label><br>
+            <input type="text" id="first-name" name="first-name"><br><br>
 
-        <label for="last-name">Last Name:</label><br>
-        <input type="text" id="last-name" name="last-name"><br><br>
+            <label for="last-name">Last Name:</label><br>
+            <input type="text" id="last-name" name="last-name"><br><br>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
 
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4"></textarea><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4"></textarea><br><br>
 
-        <button type="submit" id="submit-button">Submit</button>
-    </form>
+            <button type="submit" id="submit-button">Submit</button>
+        </form>
+    </div>
 </div>
 
+
+<!-- Footer -->
 <footer>
-    <p>&copy; 2024 CollaboWeave. All Rights Reserved.</p>
+    <p>&copy; 2024 Collabowave</p>
 </footer>
 
 <script>
-    function togglePlan(plan) {
-        // Toggle subscription pricing between monthly and yearly
-    }
-
     function openBookingForm(planType) {
-        document.getElementById('booking-form').style.display = 'block';
-
+        document.getElementById('booking-form').style.display = 'flex'; // Change to 'flex' to enable centering
         document.getElementById('booking-form-element').onsubmit = function(e) {
             e.preventDefault();
             if (planType === 'basic') {
@@ -128,6 +136,10 @@
                 window.location.href = 'https://outlook.office365.com/owa/calendar/CollabowaveEnterprise@thedigitalinsurgency.com/bookings/';
             }
         };
+    }
+
+    function closeBookingForm() {
+        document.getElementById('booking-form').style.display = 'none';
     }
 </script>
 </body>
